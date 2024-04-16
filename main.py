@@ -1,6 +1,6 @@
 #import des fichier ainsi que des bibliothec utile
 from bitarray import bitarray
-
+from Texte import *
 
 
 def lectureFichierBinaire(nomfichier):
@@ -31,34 +31,13 @@ def lectureFichierTexte(nomfichier):
         nbCaractere=data[0]
         data=f.readline()
         print(data)
+        #lecture et recuperation des lettres et de leur iteration 
         while(data!=""):
-            print(42)
-            print(data)
             tabCharactereDutexte.append(data[0])
-            tabIterationTexte.append(data[2])
-            dicoalphabets[data[0]]=data[2]
-            #tabIterationTexte.append(data[2])
+            tabIterationTexte.append(int(data[2]))
+            dicoalphabets[data[0]]=int(data[2])
             data=f.readline()
         f.close()    
-        """
-        data=f.readline()
-        data=f.readline()
-        tabCharactereDutexte.append(data[0])
-        data=f.readline()
-        tabCharactereDutexte.append(data[0])
-        data=f.readline()
-        tabCharactereDutexte.append(data[0])
-        data=f.readline()
-        tabCharactereDutexte.append(data[0])
-        data=f.readline()
-        tabCharactereDutexte.append(data[0])
-        data=f.readline()
-        tabCharactereDutexte.append(data[0])
-        data=f.readline()
-        tabCharactereDutexte.append(data[0])
-        
-        print(tabCharactereDutexte)
-        f.close()"""
     return
 
 lectureFichierTexte('exemple_freq.txt')
@@ -66,3 +45,4 @@ print(dicoalphabets)
 print(tabCharactereDutexte)
 print(tabIterationTexte)
 print(fichier_binaire)
+texte=Texte(fichier_binaire,dicoalphabets)
