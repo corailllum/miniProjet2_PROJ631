@@ -1,8 +1,8 @@
 #import des fichier ainsi que des bibliothec utile
 from bitarray import bitarray
 from Texte import *
-
-
+from ArbreHuffman import *
+from ArbreBinaire import *
 def lectureFichierBinaire(nomfichier):
     """fonction qui permet de lire et recupérer les donnée du fichier biaire 
     entré: nom du fichier binaire str
@@ -42,7 +42,11 @@ def lectureFichierTexte(nomfichier):
 
 lectureFichierTexte('exemple_freq.txt')
 print(dicoalphabets)
-print(tabCharactereDutexte)
-print(tabIterationTexte)
+#print(tabCharactereDutexte)
+#print(tabIterationTexte)
 print(fichier_binaire)
-texte=Texte(fichier_binaire,dicoalphabets)
+#texte=Texte(fichier_binaire,dicoalphabets)
+ABR= ArbreHuffman(dicoalphabets,5)
+ABR.constructionARB()
+
+#creation des feuille contenant les lettres 

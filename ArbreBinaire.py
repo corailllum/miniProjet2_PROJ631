@@ -1,21 +1,20 @@
 class ArbreBinaire:
+    """classe qui permet de créé des arbre binaire 
+    
+    """
 
-    def __init__(self,alphabet):
-        self.lettreassocier=""
+    def __init__(self,poid,lettreassocier):
+        self.lettreassocier=lettreassocier if lettreassocier is not None else None
         self.filsG=None
         self.filsD=None
-        self.poid=0
-        self.listefeuille=self.creationfeuille(alphabet)
-
-
-#getteur et des setteur 
-
+        self.poid=poid
     
-    def getlistefeuille(self):
-        return self.listefeuille
+    #getteur et des setteur 
+    def getpoid(self):
+        return self.poid
     
-#Methode 
+    def setfgauche(self,arbg):
+        self.filsG=arbg
 
-def creationfeuille(self,alphabet):
-    list
-    return list
+    def setfdroit(self,arbd):
+        self.filsD=arbd

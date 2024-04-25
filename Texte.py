@@ -1,5 +1,5 @@
 class Texte:
-    
+    """"""
     def __init__(self,texteBinaire,dicoAlphabet):
         self.texte=texteBinaire
         self.dicoAlphabet=dicoAlphabet
