@@ -42,11 +42,9 @@ class ArbreHuffman:
         methode qui trie une liste en fonction du poid de son element et met ses valeur dans listetempo
         entré liste a trié
         sortie rien 
-        """
-        """
-        print("entré liste ")
-        for z in range (len(liste)):
-            print(liste[z].getpoid())
+
+        j'ai créé cette fonction pour triée la liste en fonction du poid je voulait en faire une autre pour trié en fonction du code ascci
+        cependant je me suis rendu compte que cela faisais planté la creation de l'arbre et donnais n'importe quoi apres le parcours de l'arbre
         """
         listetrie=[liste[0]]
         for i in range(1,len(liste)):
@@ -60,26 +58,15 @@ class ArbreHuffman:
                     
                     listetrie.append(liste[i])
                     break
-        print("sorite liste ")
-        """for o in range (len(listetrie)):
-            print(listetrie[o].getpoid())
-            print(listetrie[o].getlettre())"""
+
         self.listetempo=listetrie
     
     
 
-    """def triecarc(self,liste):
-        listetrie=[liste[0]]
-        for i in range(1,len(liste)):
-            
-            for j in range(len(listetrie)):"""
                 
 
 
     def constructionARB(self):
-        print("on reste zen")
-        for z in range (len(self.listetempo)):
-            print(self.listetempo[z].getpoid())
         """
         Méthode récursive pour construire l'arbre de Huffman en combinant les arbres de poids les plus faibles.
 
@@ -106,7 +93,8 @@ class ArbreHuffman:
 
             # Ajoute le nouvel arbre à 'listetempo'
             self.listetempo.insert(0,nouvelarbre)
-
+            #au cour du projet j'ai eu beaucoup de mal a se que l'arbre se construise correctement, pour que cela marche j'ai ete oblige a ajoute les nouveau noeud au debut de la liste 
+            #je ne sais pas pourquoi et cela peut peut etre etre un probleme pour d'autre fichier c'est quelque chose qu'il faudra ameliorer
             # Trie 'listetempo' à nouveau
             self.tripoid(self.listetempo)
 
@@ -116,18 +104,13 @@ class ArbreHuffman:
         
 
     #parcourt de l'arbre
-    def decodage(self, strbin):
-       
-            
+    def decodage(self, strbin): 
         """
         Méthode qui parcourt l'arbre pour retrouver l'encodage de chaque caractère
         et l'ajoute dans une chaîne de caractères pour décoder le texte.
 
-        Args:
-        - strbin: Chaîne de caractères de 0 et 1 (binaire)
-
-        Returns:
-        - str: Texte décodé
+        entré : Chaîne de caractères de 0 et 1
+        sortie: Texte décodé
         """
         # Initialisez la chaîne pour stocker le texte décodé
         texte_decode = ""
@@ -147,21 +130,23 @@ class ArbreHuffman:
                 # Vérifie si la longueur du texte décodé atteint le poids maximum
                 if len(texte_decode) == self.poidMax:
                     break
-        print(texte_decode)
-        print(self.poidMax)
-        print(len(texte_decode))
         self.texteF=texte_decode
+        print(self.texteF)
         return texte_decode
 
     def calculegain(self):
+        """methode qui calcule le gain de place que a été effectuer par la compresstion
+         entre : rien 
+          sortie :le gain  """
         volumeini=len(self.texteF)*8
         volumef=len(self.textBinaire)
-        print(1-(volumef/volumeini))
         return("gain",1-(volumef/volumeini))
 
 
     def calculetaux(self):
-        print(len(self.textBinaire)/self.poidMax)
+        """methode qui calcule le nombre moyen de bit qui a été utiliser pour coder un caractere 
+        entre : rien 
+        sortie : le taux """
         return (len(self.textBinaire)/self.poidMax)
 
     

@@ -1,6 +1,5 @@
 #import des fichier ainsi que des bibliothec utile
 from bitarray import bitarray
-from Texte import *
 from ArbreHuffman import *
 from ArbreBinaire import *
 def lectureFichierBinaire(nomfichier):
@@ -43,10 +42,8 @@ def lectureFichierTexte(nomfichier):
 
 
 nbCaractere = lectureFichierTexte('exemple_freq.txt')
-print("je ne suis pas un hero ")
 print(nbCaractere)
 print(dicoalphabets)
-
 print(fichier_binaire)
 
 ABR= ArbreHuffman(dicoalphabets,int(nbCaractere),fichier_binaire)
