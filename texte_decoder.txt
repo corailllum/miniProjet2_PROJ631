@@ -1,0 +1,3 @@
+le gain de place etais de ('gain', 0.5555555555555556)
+le de taux de compression de chaque lettre etais de  3.5555555555555554
+bonjour!!

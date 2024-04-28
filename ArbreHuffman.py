@@ -16,6 +16,9 @@ class ArbreHuffman:
     #getteur et setteur 
     def gettextbin(self):
         return self.textBinaire 
+    
+    def gettextF(self):
+        return self.texteF
     # Methode 
     # Creation de toutes les feuilles 
     def crealistefeuille(self, dicolettre):
@@ -147,34 +150,18 @@ class ArbreHuffman:
         print(texte_decode)
         print(self.poidMax)
         print(len(texte_decode))
+        self.texteF=texte_decode
         return texte_decode
 
+    def calculegain(self):
+        volumeini=len(self.texteF)*8
+        volumef=len(self.textBinaire)
+        print(1-(volumef/volumeini))
+        return("gain",1-(volumef/volumeini))
 
-        """
-        Méthode qui parcourt l'arbre pour retrouver l'encodage de chaque caractère
-        et l'ajoute dans une chaîne de caractères pour décoder le texte.
 
-        Args:
-        - strbin: Chaîne de caractères de 0 et 1 (binaire)
+    def calculetaux(self):
+        print(len(self.textBinaire)/self.poidMax)
+        return (len(self.textBinaire)/self.poidMax)
 
-        Returns:
-        - str: Texte décodé
-        
-        if self.poidMax==len(self.texteF):
-             # Initialisez la chaîne pour stocker le texte décodé
-            current_node = self.listetempo[0]  # Démarre à partir de la racine
-
-            for bit in strbin:
-                if bit == '0':
-                    current_node = current_node.getFilsG()  # Déplacez-vous vers le fils gauche
-                elif bit == '1':
-                    current_node = current_node.getFilsD()  # Déplacez-vous vers le fils droit
-
-                if current_node.estfeuille():
-                    lettre = current_node.getlettre()
-                    self.texteF += lettre
-                    current_node = self.listetempo[0]  # Réinitialise le nœud à la racine
-            print(self.texteF)
-        print(self.texteF)
-        return "texte_decode"""
-
+    

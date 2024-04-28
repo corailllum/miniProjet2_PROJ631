@@ -16,10 +16,10 @@ def lectureFichierBinaire(nomfichier):
     return(binary_string)
 
 fichier_binaire =(lectureFichierBinaire('exemple_comp.bin'))
-tabCharactereDutexte=[]
-tabIterationTexte=[]
-nbCaractere=0
+
+
 dicoalphabets={}
+
 def lectureFichierTexte(nomfichier):
     """fonction qui permet de lire et recuprée les information du fichier alphabets 
     entré: nom du fichier alphabets str
@@ -29,24 +29,43 @@ def lectureFichierTexte(nomfichier):
         #lecture et recuperation du nombre total de caractere
         data=f.readline()
         nbCaractere=data[0]
+        
         data=f.readline()
         print(data)
         #lecture et recuperation des lettres et de leur iteration 
         while(data!=""):
-            tabCharactereDutexte.append(data[0])
-            tabIterationTexte.append(int(data[2]))
             dicoalphabets[data[0]]=int(data[2])
             data=f.readline()
         f.close()    
-    return
+    return nbCaractere
 
-lectureFichierTexte('exemple_freq.txt')
+
+
+
+nbCaractere = lectureFichierTexte('exemple_freq.txt')
+print("je ne suis pas un hero ")
+print(nbCaractere)
 print(dicoalphabets)
-#print(tabCharactereDutexte)
-#print(tabIterationTexte)
+
 print(fichier_binaire)
-#texte=Texte(fichier_binaire,dicoalphabets)
-ABR= ArbreHuffman(dicoalphabets,9,fichier_binaire)
+
+ABR= ArbreHuffman(dicoalphabets,int(nbCaractere),fichier_binaire)
 ABR.constructionARB()
 ABR.decodage(ABR.gettextbin())
-#creation des feuille contenant les lettres 
+ABR.calculegain()
+ABR.calculetaux()
+
+def ecriturefichiertxt(gain,taux,text):
+    """fonction qui permet de crée un fichier contenant le fichier decoder avec le calcule de gain et de taux """
+    with open("texte_decoder.txt", 'w') as fichier:
+            # Écrit le contenu dans le fichier
+            fichier.write("le gain de place etais de ")
+            fichier.write(str(gain))
+            fichier.write("\n")
+            fichier.write("le de taux de compression de chaque lettre etais de  ")
+            fichier.write(str(taux))
+            fichier.write("\n")
+            fichier.write(text)
+            fichier.close()
+
+ecriturefichiertxt(ABR.calculegain(),ABR.calculetaux(),ABR.gettextF())
