@@ -22,6 +22,7 @@ Utilisation
 il faut dans un premeir temps importé dans le dosier miniProjet2 les fichier de decodage et d'alphabets
 pour utiliser le decodage il faut dans la class main a la ligne 18 entré le nom du fichier binaire contenant le texte a decoder 
 il faut aussi a la ligne 45 du main donner le nom du fichier alphabets comportant les lettre utiliser et leur nombre d'ocurence 
+le fichier decoder sera dans le fichier du nom texte_decoder
 
 crédit 
 pour comprendre le decodage j'ai utilisée cette video : https://www.youtube.com/watch?v=Wfdv6854QTw
