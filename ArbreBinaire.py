@@ -13,8 +13,20 @@ class ArbreBinaire:
     def getpoid(self):
         return self.poid
     
+    def getFilsG(self):
+        return self.filsG
+    
+    def getFilsD(self):
+        return self.filsD
+    
+    def getlettre(self):
+        return self.lettreassocier
+    
     def setfgauche(self,arbg):
         self.filsG=arbg
 
     def setfdroit(self,arbd):
         self.filsD=arbd
+
+    def estfeuille (self):
+        return self.filsG is None and self.filsD is None

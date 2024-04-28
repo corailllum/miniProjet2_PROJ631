@@ -46,7 +46,7 @@ print(dicoalphabets)
 #print(tabIterationTexte)
 print(fichier_binaire)
 #texte=Texte(fichier_binaire,dicoalphabets)
-ABR= ArbreHuffman(dicoalphabets,5)
+ABR= ArbreHuffman(dicoalphabets,9,fichier_binaire)
 ABR.constructionARB()
-
+ABR.decodage(ABR.gettextbin())
 #creation des feuille contenant les lettres 
