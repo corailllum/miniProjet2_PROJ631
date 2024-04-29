@@ -1,35 +1,34 @@
-le decodage du Huffman pemet de decompresser de fichier qui on été code par se meme procéder, la compression de huffman permet de compresser un fichier en 
-fonction du nombre d'occurence de chaque caractere. Pour cela on construie un arbre binaire en fonction d nombre d'iteration de chaque lettre et on le parcour afin de trouver le nombre d'occurence 
-pour la decompresstion nous construison aussi l'arbre puis nous donnons la fais de caratere binaire coder en paramettre du parcour pour la decoder petit a petit
+Le décodage du Huffman permet de décompresser des fichiers qui ont été codés par se même procéder, la compression de Huffman permet de compresser un fichier en fonction du nombre d'occurrences de chaque caractère. Pour cela, on construit un arbre binaire en fonction d nombre d'itération de chaque lettre et on le parcourt afin de trouver le nombre d'occurrences. 
+Pour la décompression, nous construisons aussi l'arbre puis nous donnons la chaîne de caractère binaire codé en paramètre du parcours pour la décoder petit à petit.
 
-ce proget a été coder en python
+Ce projet a été codé en python.
 
-j'ai decider de coder en programation orientée object
-j'ai créé 3 classe :
-la classe main 
-permet de lire le fichier binaire faire les traitement puis d'ecrire dans le fichier text.txt le fichie decompresser 
+J'ai décidé de coder en programmation orientée objet.
+J'ai créé 3 classes :
+La classe main :
+Permet de lire le fichier binaire faire les traitements puis d'écrire dans le fichier text.txt le fichier décompresser 
 
-la classe arbre binaire 
-permet la creation d'obect arbre binaire qui sont utiliser afin de cree l'arbre 
+Le classe arbrebinaire : 
+Permet la création d'objets arbre binaire qui est utilisé afin de créer l'arbre 
 
-la classe arbre huffman 
-permet la creation de l'arbre , le parcours de decodage du text et la calucle de gain et de taux de compression des lettre 
+La classe arbreHuffman : 
+Permet la création de l'arbre, le parcours de décodage du texte et le calcule de gain et de taux de compression des lettres.
 
-Installtion 
-pour l'instalation du programme il suffit de telecharger les fichier du git 
+Installation 
+Pour l'installation du programme, il suffit de télécharger les fichiers du git et d'ouvrir dans un éditeur de code python la classe Main.
 
 Utilisation 
-il faut dans un premeir temps importé dans le dosier miniProjet2 les fichier de decodage et d'alphabets
-pour utiliser le decodage il faut dans la class main a la ligne 18 entré le nom du fichier binaire contenant le texte a decoder 
-il faut aussi a la ligne 45 du main donner le nom du fichier alphabets comportant les lettre utiliser et leur nombre d'ocurence 
-le fichier decoder sera dans le fichier du nom texte_decoder
+Il faut dans un premier temps importer dans le dossier miniProjet2 les fichiers de décodage et d'alphabets que vous voulez décoder.
+Pour utiliser le décodage, il faut dans la classe main a la ligne 18 entré le nom du fichier binaire contenant le texte a décoder. 
+Il faut aussi à la ligne 45 du main donner le nom du fichier alphabets comportant les lettres utiliser et leur nombre d'occurrences. 
+Le fichier décodé sera envoyé le fichier du nom texte_decoder
 
-crédit 
-pour comprendre le decodage j'ai utilisée cette video : https://www.youtube.com/watch?v=Wfdv6854QTw
+Crédit 
+Pour comprendre la construction de l'arbre et le parcours, j'ai utilisé cette vidéo : https://www.youtube.com/watch?v=Wfdv6854QTw
 
-piste d'ameloriation 
+Piste d'amélioration
 
-dans le class arbrehuffman 
-il faut revoir les methode de parcours de l'arbre et de creation de l'arbre je pense qu'il y a un probeleme dans la gestion de la liste temporaraie qu'il me sert a la creation de l'arbre 
-en effet pour que la methode marche avec l'exemple qui nous a été donner j'ai ete obliger d'ajouter les nouc=veau noeud au debut de la liste 
+Dans la classe arbrehuffman 
+Il faut revoir les méthodes de parcours de l'arbre et de création de l'arbre, je pense qu'il y a un problème dans la gestion de la listetempo qu'il me sert à la création de l'arbre. 
+En effet, pour que la méthode marche avec l'exemple qui nous a été donné, j'ai été obligé d'ajouter les nouveaux nœuds au début de la listetempo. 
 
